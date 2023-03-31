@@ -1,33 +1,41 @@
 <div>
   <p class="title"> {{ title }}</p>
   
-    <div class="form">
-      <div class="inputs">
-        <input
-        id="number"
-        type="number"
-        name="number1"
-        [(ngModel)]="number1"
-        class="number"
-        required
-        min="0"
-        max="50">
-       
-          <br>
-        
+    <form *ngIf="form" [formGroup]="form">
+      <div class="form">
+        <div class="inputs">
           <input
-           type="number"
-           name="number2"
-           [(ngModel)]="number2"
-           class="number2"
-           required
-           min="0"
-           max="50"
-           >
-      </div>
+          formControlName="numbera"
+          id="number"
+          type="number"
+          name="number1"
+          [(ngModel)]="number1"
+          class="number"
+          required
+          min="0"
+          max="50">
+          <div *ngIf="!form.get('numbera')?.valid && form.get('numbera')?.touched && form.get('numbera')?.errors?.['required']">
+            <p>This field is required</p>
+           </div>
+      
+            <br>
+      
+            <input
+            formControlName="numberb"
+             type="number"
+             name="number2"
+             [(ngModel)]="number2"
+             class="number2"
+             min="0"
+             max="50"
+             >
+             <div *ngIf="!form.get('numberb')?.valid && form.get('numberb')?.touched && form.get('numberb')?.errors?.['required']">
+              <p>This field is required</p>
+             </div>
+        </div>
 
          <div class="allButtons">
-          <button (click)="add()" type="submit" >Add</button>
+          <button (click)="add()"  type="submit" >Add</button>
           <button (click)="subs()" type="submit">Substract</button>
           <button (click)="mult()" type="submit">Multiply</button>
           <button (click)="div()" type="submit">Divide</button>
@@ -38,6 +46,7 @@
         <button (click)="clear()" type="submit">Reset</button>
       
     </div>
+  </form>
 
 <br>
 

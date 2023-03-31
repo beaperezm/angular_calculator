@@ -22,22 +22,6 @@ export class AppComponent {
     })
   }
 
- public plus() {
-  this.number1 ++
- }
-
- public minus() {
-  this.number1 --
- }
-
- public plus2() {
-  this.number2 ++
- }
-
- public minus2() {
-  this.number2 --
- }
-
   public add(): void {
     this.result = this.number1 + this.number2
   };
@@ -59,7 +43,7 @@ export class AppComponent {
     if(!this.result) { 
           return; 
         } else {
-          delete this.result && this.number1 === 0 && this.number2 === 0; 
+          delete this.result
         }
   }
   
