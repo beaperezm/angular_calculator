@@ -1,8 +1,13 @@
 <div>
   <p class="title"> {{ title }}</p>
+
+  
   
     <form *ngIf="form" [formGroup]="form">
+
+    
       <div class="form">
+        <p class="form__result">Result {{ result }}</p>
         <div class="inputs">
           <input
           formControlName="numbera"
@@ -15,7 +20,7 @@
           min="0"
           max="50">
           <div *ngIf="!form.get('numbera')?.valid && form.get('numbera')?.touched && form.get('numbera')?.errors?.['required']">
-            <p>This field is required</p>
+            <p class="error" [ngStyle]="{color: 'red'}">This field is required</p>
            </div>
       
             <br>
@@ -30,18 +35,18 @@
              max="50"
              >
              <div *ngIf="!form.get('numberb')?.valid && form.get('numberb')?.touched && form.get('numberb')?.errors?.['required']">
-              <p>This field is required</p>
+              <p class="error" [ngStyle]="{color: 'red'}">This field is required</p>
              </div>
         </div>
 
          <div class="allButtons">
           <button (click)="add()"  type="submit" >Add</button>
-          <button (click)="subs()" type="submit">Substract</button>
+          <button (click)="subs()" type="submit">Subtract</button>
           <button (click)="mult()" type="submit">Multiply</button>
           <button (click)="div()" type="submit">Divide</button>
         </div>
 
-        <p class="form title2" >Result: {{ result }}</p>
+        
 
         <button (click)="clear()" type="submit">Reset</button>
       

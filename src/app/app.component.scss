@@ -10,6 +10,27 @@
     box-shadow: 0 0 10px 10px rgba(153, 255, 0, 0.453);
     width: 65%;
     border-radius: 50px;
+
+    &__result {
+        display: flex;
+        justify-content: center;
+        margin-left: 30%;
+        padding: 8px;
+        width: 361px;
+        outline: 1px solid #b53f10;
+        background-color: #664dcb;
+        color: white;
+        font-family: "Gemunu Libre", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        transition: outline 0.2s linear;
+    }
+
+    &:focus {
+        border: 1px solid darken(#d37133, 20%);
+        outline: 1px solid transparent;
+    }
 }
 
 .title {
@@ -78,7 +99,7 @@
 
 input:required {
     border: 1px dashed red;
-  }
+}
 
 .allButtons {
     display: flex;
@@ -129,25 +150,8 @@ button:hover .border {
 }
 
 
-.title2 {
-    padding: 8px;
-    width: 361px;
-    outline: 1px solid #b53f10;
-    background-color: #664dcb;
-    color: white;
-    font-family: "Gemunu Libre", sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    transition: outline 0.2s linear;
 
-    &:focus {
-        border: 1px solid darken(#d37133, 20%);
-        outline: 1px solid transparent;
-    }
-
-    .number2::selection::selection {
-        color: #fff;
-        background-color: darken(#d37133, 20%);
-    }
+.number2::selection::selection {
+    color: #fff;
+    background-color: darken(#d37133, 20%);
 }
