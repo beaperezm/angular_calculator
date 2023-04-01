@@ -9,46 +9,50 @@
       <div class="form">
         <p class="form__result">Result {{ result }}</p>
         <div class="inputs">
-          <input
-          formControlName="numbera"
-          id="number"
-          type="number"
-          name="number1"
-          [(ngModel)]="number1"
-          class="number"
-          required
-          min="0"
-          max="50">
-          <div *ngIf="!form.get('numbera')?.valid && form.get('numbera')?.touched && form.get('numbera')?.errors?.['required']">
-            <p class="error" [ngStyle]="{color: 'red'}">This field is required</p>
+          <div class="inputs__first">
+            <input
+            formControlName="numbera"
+            id="number"
+            type="number"
+            name="number1"
+            [(ngModel)]="number1"
+            class="number"
+            required
+            min="0"
+            max="50">
+            <div *ngIf="!form.get('numbera')?.valid && form.get('numbera')?.touched && form.get('numbera')?.errors?.['required']">
+              <p class="inputs__error">This field is required</p>
            </div>
+          </div>
       
             <br>
       
-            <input
-            formControlName="numberb"
-             type="number"
-             name="number2"
-             [(ngModel)]="number2"
-             class="number2"
-             min="0"
-             max="50"
-             >
-             <div *ngIf="!form.get('numberb')?.valid && form.get('numberb')?.touched && form.get('numberb')?.errors?.['required']">
-              <p class="error" [ngStyle]="{color: 'red'}">This field is required</p>
-             </div>
+            <div class="inputs__second">
+              <input
+              formControlName="numberb"
+               type="number"
+               name="number2"
+               [(ngModel)]="number2"
+               class="number2"
+               min="0"
+               max="50"
+               >
+               <div *ngIf="!form.get('numberb')?.valid && form.get('numberb')?.touched && form.get('numberb')?.errors?.['required']">
+                <p class="inputs__error">This field is required</p>
+               </div>
+            </div>
         </div>
 
          <div class="allButtons">
-          <button (click)="add()"  type="submit" [disabled]="!form.valid">+</button>
-          <button (click)="subs()" type="submit" [disabled]="!form.valid">-</button>
-          <button (click)="mult()" type="submit" [disabled]="!form.valid">x</button>
-          <button (click)="div()" type="submit" [disabled]="!form.valid">÷</button>
+          <button (click)="add()"  type="submit" [disabled]="!form.valid" class="allButtons__button" >+</button>
+          <button (click)="subs()" type="submit" [disabled]="!form.valid" class="allButtons__button">-</button>
+          <button (click)="mult()" type="submit" [disabled]="!form.valid" class="allButtons__button">x</button>
+          <button (click)="div()" type="submit" [disabled]="!form.valid" class="allButtons__button">÷</button>
         </div>
 
         
 
-        <button (click)="clear()" type="submit">C</button>
+        <button (click)="clear()" type="submit" class="allButtons__reset">C</button>
       
     </div>
   </form>
