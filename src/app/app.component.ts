@@ -36,7 +36,6 @@ export class AppComponent {
 
   public div(): void {
     this.result = this.number1 / this.number2
-  
   }
 
   public clear(): void {
@@ -46,5 +45,8 @@ export class AppComponent {
           delete this.result
         }
   }
-  
+
+  public resetForm(){
+    this.form?.reset();
+  }
 }

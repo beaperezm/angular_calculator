@@ -3,7 +3,7 @@
 
   
   
-    <form *ngIf="form" [formGroup]="form">
+    <form *ngIf="form" [formGroup]="form" (submit)="resetForm()">
 
     
       <div class="form">
@@ -40,15 +40,15 @@
         </div>
 
          <div class="allButtons">
-          <button (click)="add()"  type="submit" >Add</button>
-          <button (click)="subs()" type="submit">Subtract</button>
-          <button (click)="mult()" type="submit">Multiply</button>
-          <button (click)="div()" type="submit">Divide</button>
+          <button (click)="add()"  type="submit" [disabled]="!form.valid">+</button>
+          <button (click)="subs()" type="submit" [disabled]="!form.valid">-</button>
+          <button (click)="mult()" type="submit" [disabled]="!form.valid">x</button>
+          <button (click)="div()" type="submit" [disabled]="!form.valid">÷</button>
         </div>
 
         
 
-        <button (click)="clear()" type="submit">Reset</button>
+        <button (click)="clear()" type="submit">C</button>
       
     </div>
   </form>
